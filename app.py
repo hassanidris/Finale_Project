@@ -14,17 +14,13 @@ def index():
 
 @app.route("/about")
 def about():
-    with open("About.html") as f:
-        content = f.read()
+    return render_template("About.html")
 
-    return content
 
 @app.route("/Newsletter")
 def Newsletter():
-    with open("Newsletter.html") as f:
-        content = f.read()
+    return render_template("Newsletter.html")
 
-    return content
 
 if __name__ == "__main__":
     print(welcome_message)
