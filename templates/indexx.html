@@ -3,8 +3,10 @@
 <head>
     <title>Places to visit</title>
     <link rel="shortcut icon" href="https://media.cntraveler.com/photos/60596b398f4452dac88c59f8/4:5/w_2132,h_2665,c_limit/MtFuji-GettyImages-959111140.jpg">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
 <style>
 * {
   box-sizing: border-box;
@@ -96,6 +98,8 @@ box-shadow: 0px 0px 30px  rgb(255,127,80);
 /* Other styles */
 transform: scale(1.1) rotate(+10deg);
 }
+
+
 footer {
   /* place on the bottom */
 
@@ -103,11 +107,13 @@ footer {
   left: 0;
   width: 100%;
   padding-top: 50px;
+  margin-top: 50px;
 
 
   background: #FF7F50;
   display: grid;
   place-items: center;
+  margin-top: 50px;
 
 
 }
@@ -117,6 +123,47 @@ button:hover {
   background-color: #bf80ff;
   color: white;
 }
+---------------------
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #ffcc99;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #ffa280;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+form.example button:hover {
+  background: #bf80ff;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 </style>
 </head>
 <body>
@@ -127,6 +174,25 @@ button:hover {
     <a href="http://127.0.0.1:5000/about">
     <button>About Us</button>
     </a>
+    <a href="http://127.0.0.1:5000/Register?sex=F">
+    <button>Register</button>
+    </a>
+    <a href="http://127.0.0.1:5000/Locate">
+    <button>Locate Us</button>
+    </a>
+    <a href="http://127.0.0.1:5000/Feedback">
+    <button>Feedback</button>
+    </a>
+<hr>
+    <form class="example" action="/action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+
+
+
+
 
 <hr>
 
