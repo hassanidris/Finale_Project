@@ -49,6 +49,9 @@ def Newsletter():
 def Feedback():
     return render_template("Feedback.html")
 
+@app.route("/Terms&conditions")
+def Termsconditions():
+    return render_template("Terms&conditions.html")
 
 
 
