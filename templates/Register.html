@@ -184,7 +184,7 @@ input {
 <body>
 <div class="wrap">
    <h1 class="register-title">Welcome</h1>
-   <form class="register">
+   <form class="register" action="{{ url_for('register') }}" method="post" autocomplete="off">
       <div class="register-switch">
          <input type="radio" name="sex" value="F" id="sex_f" class="register-switch-input" checked>
          <label for="sex_f" class="register-switch-label">Female</label>
@@ -193,8 +193,13 @@ input {
       </div>
       <input type="email" class="register-input" placeholder="Email address">
       <input type="password" class="register-input" placeholder="Password">
-      <input type="submit" value="Create Account" class="register-button" ONCLICK="alert('Congratulations! You have been registered with us now.')">
+      <input type="submit" value="Create Account" class="register-button" >
+       <br>
+       <div class="msg">{{ msg }}</div>
    </form>
 </div>
 </body>
 </html>
+
+<!-- ONCLICK="alert('Congratulations! You have been registered with us now.')"-->
+<!-- <div class="msg">{{ msg }}</div>-->

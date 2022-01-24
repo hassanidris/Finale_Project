@@ -11,11 +11,11 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return render_template("login.html")
-database={'sana':'123'}
+database={'sana@yahoo.com':'123'}
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():
-    name1=request.form['username']
+    name1=request.form['email']
     pwd=request.form['password']
     if name1 not in database:
 	    return render_template('login.html',info='Invalid User')
@@ -33,9 +33,20 @@ def index():
 def about():
     return render_template("About.html")
 
-@app.route("/Register")
-def Register():
-    return render_template("Register.html")
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # Output message if something goes wrong...
+    msg = ''
+    # Check if "username", "password" and "email" POST requests exist (user submitted form)
+    if request.method == 'POST' and 'password' in request.form and 'email' in request.form:
+        # Create variables for easy access
+        password = request.form['password']
+        email = request.form['email']
+    elif request.method == 'POST':
+        # Form is empty... (no POST data)
+        msg = 'Please fill out the form!'
+    # Show registration form with message (if any)
+    return render_template('register.html', msg=msg)
 
 @app.route("/Locate")
 def Locate():
@@ -58,7 +69,6 @@ def Termsconditions():
 if __name__ == "__main__":
     print(welcome_message)
     app.run()
-
 
 
 

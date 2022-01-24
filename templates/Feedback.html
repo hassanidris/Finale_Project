@@ -28,16 +28,17 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+.btn {
   background-color: #001a33;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  max-width: 124px;
 }
 
-input[type=submit]:hover {
+.btn:hover {
   background-color: #000000;
 }
 
@@ -75,8 +76,11 @@ input[type=submit]:hover {
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit" ONCLICK="alert('Thank you!')">
+
+<!--    <input type="submit" value="Submit" ONCLICK="alert('Thank you!')">-->
   </form>
+      <div class="btn" ONCLICK="alert('Thank you!')"><center>Submit</center></div>
+
 </div>
 
 </body>
