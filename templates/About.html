@@ -23,25 +23,38 @@ body {
 }
 
 /* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 20px;
-}
+      .column {
+        padding: 0 20px;
+        height: 100%;
+        box-shadow: 0px 0px 15px #ff6347;
+        background-color: #ffefd5;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        /* flex: auto; */
+      }
 
 /* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+      .row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        grid-auto-flow: column;
+      }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+      }
 
 /* Responsive columns */
 @media screen and (max-width: 600px) {
-  .column {
+  .row {
+          gap: 20px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-flow: column;
+        }
+    .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
@@ -81,10 +94,6 @@ box-shadow: 0px 0px 30px rgb(226, 94, 38);
 
 }
 
-.card:hover {
-/* Other styles */
-transform: scale(1.1) rotate(+5deg);
-}
 
 
 </style>
